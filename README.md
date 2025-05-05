@@ -8,7 +8,7 @@
 >
 >A su vez para el diseño de la pagina usaremos el framework
 >
->[![Tailwindcss Build Logo](https://i.pinimg.com/736x/a8/4e/4c/a84e4c713d67bce60b4ef0023623d9a7.jpg)](https://tailwindcss.com/)
+>[![Tailwindcss Build Logo](https://imgs.search.brave.com/v-FALs0k2OQURnG7RCyUCq6BijIm_rIbDaWV0st3Lcw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YXJlc291cmNlLnNm/bzIuZGlnaXRhbG9j/ZWFuc3BhY2VzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/NC8wOS8xMDE3MDMy/NS9UYWlsd2luZC1D/U1MtTG9nby0xLnBu/Zw)](https://tailwindcss.com/)
 >
 >### Dependencias del Back-end
 >En este apartado se hara uso del framework
