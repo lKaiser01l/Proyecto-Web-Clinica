@@ -1,6 +1,6 @@
 # Proyecto del Curso Desarrollo Web Integrado | Clinica Limatambo
 
->[!CAUTIONE]
+>[!CAUTION]
 >### Dependencias del Front-end
 >Este proyecto hace uso del framework Angular
 >
