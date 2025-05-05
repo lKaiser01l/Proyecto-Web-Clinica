@@ -22,4 +22,4 @@
 >[!IMPORTANT]
 >## Para poder contruibuir con el proyecto
 >### 1. Hacer un fork del repositorio en github
->
+>![Fork Repositorio](/img/Captura de pantalla 2025-05-04 194754.png) 
