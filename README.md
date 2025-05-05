@@ -15,7 +15,7 @@
 >
 >[![Spring Build Logo](https://imgs.search.brave.com/iy_fuSY3X4St9K5XJ8Jbi7sw_s3xCiw5DvrMmzr6m3I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bG9nby53aW5lL2Ev/bG9nby9TcHJpbmdf/RnJhbWV3b3JrL1Nw/cmluZ19GcmFtZXdv/cmstTG9nby53aW5l/LnN2Zw)](https://spring.io/projects/spring-framework)
 >
->La base de datos sera no sql y se desarrollara en Mongodb
+>Por ultimo se usara una base de datos no sql como Mongodb para el desarrollo de este proyecto
 >
 >[![mongodb build logo](https://imgs.search.brave.com/YhcRsxxIwDxgDX0N6L6o4N5EsOzYA_1WMQdY7Vwwwho/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA4/L01vbmdvREItTG9n/by01MDB4MzEzLnBu/Zw)](https://www.mongodb.com/)
 >
