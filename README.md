@@ -26,7 +26,7 @@
 >```
 >Tambien sera necesario tener node.js instalado
 >
->[![Node.js Build logo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLr5qOhcjrsingfneNka5MwFbIytEPnBjnjQ&s)](https://nodejs.org/dist/v20.19.1/node-v20.19.1-x64.msi)
+>[![Node.js Build logo](https://cdnlogo.com/logos/n/88/nodejs.svg)](https://nodejs.org/dist/v20.19.1/node-v20.19.1-x64.msi)
 
 
 
