@@ -33,4 +33,7 @@
 >[!IMPORTANT]
 >## Para poder contruibuir con el proyecto
 >### 1. Hacer un fork del repositorio en github
->![Fork Repositorio](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-04%20194754.png) 
+>![Fork Repositorio](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-04%20194754.png)
+>### 2.Clonar su repositorio(del fork que cada uno tiene)
+>clona el repositorio
+>![Clonar Reposotorio](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-06%20183258.png)
