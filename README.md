@@ -18,6 +18,15 @@
 >Por ultimo se usara una base de datos no sql como Mongodb para el desarrollo de este proyecto
 >
 >[![mongodb build logo](https://imgs.search.brave.com/YhcRsxxIwDxgDX0N6L6o4N5EsOzYA_1WMQdY7Vwwwho/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly8xMDAw/bG9nb3MubmV0L3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDIwLzA4/L01vbmdvREItTG9n/by01MDB4MzEzLnBu/Zw)](https://www.mongodb.com/)
+>
+>
+>Ahora para instalar Angular deben entrar al cmd de sus computadoras e ingresar este comando
+>```
+>npm install -g @angular/cli@17.3.10
+>```
+>
+
+
 
 >[!IMPORTANT]
 >## Para poder contruibuir con el proyecto
