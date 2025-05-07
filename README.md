@@ -32,6 +32,8 @@
 >ng version
 >```
 >![version ANgular](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-07%20133127.png)
+>
+>
 
 
 
