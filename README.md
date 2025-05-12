@@ -27,6 +27,13 @@
 >Tambien sera necesario tener node.js instalado
 >
 >[![Node.js Build logo](https://cdnlogo.com/logos/n/88/nodejs.svg)](https://nodejs.org/dist/v20.19.1/node-v20.19.1-x64.msi)
+>Por ultimo verificar las versiones con el principal
+>```
+>ng version
+>```
+>![version ANgular](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-07%20133127.png)
+>
+>
 
 
 
