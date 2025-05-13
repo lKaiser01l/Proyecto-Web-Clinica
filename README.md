@@ -42,5 +42,32 @@
 >### 1. Hacer un fork del repositorio en github
 >![Fork Repositorio](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-04%20194754.png)
 >### 2.Clonar su repositorio(del fork que cada uno tiene)
->clona el repositorio
+>Entra a visual estudio code y clona el repositorio
 >![Clonar Reposotorio](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-06%20183258.png)
+>
+>---
+>
+>Copia el link de tu repositorio
+>![Copiar Repositorio](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-12%20232530.png)
+>
+>---
+>
+>Pega el link de tu repositorio en la pestaña emergente
+>![Proceso de clonacion](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-12%20233141.png)
+>
+>---
+>
+>Crea una carpeta de facil acceso para que tengas tu repostirio y seleccionala
+>![Seleccionar carpeta](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/image.png)
+>
+>
+>### 3. Comprobacion
+>para comprobar que todo este correcto tendra que desplegar el proyecto en un localhost con el siguiente comando(el comando debe ser ejecutado en la terminal raiz del proyecto)
+>
+>```
+>ng serve
+>```
+>
+>Una ves ejecutado, saldra este mensaje junto al link del localhost
+>![LocalHost](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-12%20234420.png)
+
