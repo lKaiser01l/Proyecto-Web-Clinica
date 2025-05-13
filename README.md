@@ -70,4 +70,6 @@
 >
 >Una ves ejecutado, saldra este mensaje junto al link del localhost
 >![LocalHost](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-12%20234420.png)
-
+>
+>
+>### 4. Aprobar
