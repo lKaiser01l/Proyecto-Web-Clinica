@@ -1,1 +1,112 @@
-<p>lab works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProyectoWebClinica</title>
+</head>
+<body>
+  <header class="header">
+  <div class="container">
+    <img src="assets/Imagenes-Inicio/Logo.jpg" alt="Logo Clínica" class="logo" />
+    <nav class="nav">
+      <a routerLink="/">Inicio</a>
+      <a routerLink="/especialidades">Especialidades</a>
+      <a routerLink="/servicios">Servicios</a>
+      <a routerLink="/staff">Staff Médico</a>
+      <a routerLink="/convenios">Convenios y Promociones</a>
+      <a routerLink="/blog">Blog</a>
+      <a routerLink="/conocenos">Conócenos</a>
+      <a routerLink="/atencion al cliente">Atención al Cliente</a>
+    </nav>
+  </div>
+</header>
+<div class="carrusel">
+  <button class="arrow left" (click)="anterior()">❮</button>
+  <img [src]="imagenes[indiceActual]" class="carrusel-img" alt="Imagen carrusel" />
+  <button class="arrow right" (click)="siguiente()">❯</button>
+  <div class="dots">
+    <span
+      *ngFor="let img of imagenes; let i = index"
+      class="dot"
+      [class.active]="i === indiceActual"
+      (click)="seleccionar(i)"
+    ></span>
+  </div>
+</div>
+<section class="especialidades">
+  <h2>Nuestras Especialidades</h2>
+  <div class="especialidades-grid">
+    <div class="card" *ngFor="let especialidad of especialidades">
+      <img [src]="especialidad.imagen" alt="Imagen especialidad" />
+      <h3>{{ especialidad.nombre }}</h3>
+      <p>{{ especialidad.descripcion }}</p>
+    </div>
+  </div>
+  <div class="ver-todas-wrapper">
+  <a routerLink="/especialidades" class="ver-todas-btn ripple">
+    Ver todas las especialidades
+    <span class="efecto"></span>
+  </a>
+</div>
+</section>
+<section class="servicios">
+  <h2>Nuestros Servicios</h2>
+  <div class="servicios-carrusel">
+    <div class="servicio-item" *ngFor="let servicio of servicios">
+      <div class="overlay">{{ servicio.nombre }}</div>
+      <img [src]="servicio.imagen" alt="{{ servicio.nombre }}" />
+    </div>
+  </div>
+</section>
+<section class="aseguradoras">
+  <h2>LAS COMPAÑIAS DE SEGUROS QUE CONFIAN EN NOSOTROS</h2>
+  <div class="aseguradoras-carrusel-wrapper">
+    <button class="flecha izquierda" (click)="moverCarrusel('izquierda')">&#10094;</button>
+
+    <div class="aseguradoras-carrusel" #carrusel>
+      <div class="aseguradora-item" *ngFor="let aseguradora of aseguradoras">
+        <img [src]="aseguradora.imagen" [alt]="aseguradora.nombre" />
+      </div>
+    </div>
+
+    <button class="flecha derecha" (click)="moverCarrusel('derecha')">&#10095;</button>
+  </div>
+  <div class="puntos">
+    <span
+      *ngFor="let punto of puntos; let i = index"
+      [class.activo]="i === indiceActivo"
+      (click)="irAPunto(i)"
+    ></span>
+  </div>
+</section>
+<footer class="footer-container">
+    <div class="footer-content">
+
+      <div class="footer-section">
+        <h3> 📞Contacto</h3>
+        <p><strong>Telefono San Isidro: </strong>(01) 617-1111 / 970-055-647</p>
+        <p><strong>Telefono San Juan de Lurigancho: </strong>(01) 415-1600 / 988 039 731</p>
+        <p><strong>Telefono Minka: </strong>(01) 652-7474 / 970 057 801</p>
+        <p><strong>Correo: </strong>contacto-clinicalimatambo.com</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>🏥 Sobre Nosotros</h3>
+        <p>Somos una Clinica comprometida con tu salud, brindando atención médica integral y especializada con profesionales de alto nivel</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>📍Nuestras Sedes</h3>
+        <p><strong>Sede San Isidro: </strong>Av. República de Panamá 3606, San Isidro</p>
+        <p><strong>Sede San Juan de Lurigancho: </strong>Av. Próceres de la Independencia 2701</p>
+        <p><strong>Sede Minka: </strong>Anexo 1: Av. Argentina 3093 Int. 214, Anexo 2: Av. Argentina 3093 </p>
+      </div>
+      <div class="footer-bottom">© 2025 Clínica Limatambo. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+
