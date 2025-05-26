@@ -1,3 +1,61 @@
 <app-header></app-header>
+<div class="carrusel">
+  <button class="arrow left" (click)="anterior()">❮</button>
+  <img [src]="imagenes[indiceActual]" class="carrusel-img" alt="Imagen carrusel" />
+  <button class="arrow right" (click)="siguiente()">❯</button>
+  <div class="dots">
+    <span
+      *ngFor="let img of imagenes; let i = index"
+      class="dot"
+      [class.active]="i === indiceActual"
+      (click)="seleccionar(i)"
+    ></span>
+  </div>
+</div>
+<section class="especialidades">
+  <h2>Nuestras Especialidades</h2>
+  <div class="especialidades-grid">
+    <div class="card" *ngFor="let especialidad of especialidades">
+      <img [src]="especialidad.imagen" alt="Imagen especialidad" />
+      <h3>{{ especialidad.nombre }}</h3>
+      <p>{{ especialidad.descripcion }}</p>
+    </div>
+  </div>
+  <div class="ver-todas-wrapper">
+  <a routerLink="/especialidades" class="ver-todas-btn ripple">
+    Ver todas las especialidades
+    <span class="efecto"></span>
+  </a>
+</div>
+</section>
+<section class="servicios">
+  <h2>Nuestros Servicios</h2>
+  <div class="servicios-carrusel">
+    <div class="servicio-item" *ngFor="let servicio of servicios">
+      <div class="overlay">{{ servicio.nombre }}</div>
+      <img [src]="servicio.imagen" alt="{{ servicio.nombre }}" />
+    </div>
+  </div>
+</section>
+<section class="aseguradoras">
+  <h2>LAS COMPAÑIAS DE SEGUROS QUE CONFIAN EN NOSOTROS</h2>
+  <div class="aseguradoras-carrusel-wrapper">
+    <button class="flecha izquierda" (click)="moverCarrusel('izquierda')">&#10094;</button>
 
-<p>home works!</p>
+    <div class="aseguradoras-carrusel" #carrusel>
+      <div class="aseguradora-item" *ngFor="let aseguradora of aseguradoras">
+        <img [src]="aseguradora.imagen" [alt]="aseguradora.nombre" />
+      </div>
+    </div>
+
+    <button class="flecha derecha" (click)="moverCarrusel('derecha')">&#10095;</button>
+  </div>
+  <div class="puntos">
+    <span
+      *ngFor="let punto of puntos; let i = index"
+      [class.activo]="i === indiceActivo"
+      (click)="irAPunto(i)"
+    ></span>
+  </div>
+</section>
+<app-footer></app-footer>
