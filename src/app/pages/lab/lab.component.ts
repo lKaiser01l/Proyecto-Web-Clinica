@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-lab',
@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
   templateUrl: './lab.component.html',
   styleUrl: './lab.component.css'
 })
-
-export class LabComponent {
+export class LabComponent  {
 
 }
