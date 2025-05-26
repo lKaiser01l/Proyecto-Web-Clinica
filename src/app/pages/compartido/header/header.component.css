@@ -1,0 +1,31 @@
+header nav div:first-child{
+    background-color: #322071;
+    text-align: right;
+    color: white;
+    height: 40px;
+    padding: 12px;
+}
+header div nav div{
+    background-color: #574497; 
+    text-align: left;
+    height: calc(100% - 30px);
+}
+header ul li{
+    display: inline-block;
+  position: relative;
+  padding: 0 12px;
+  color: white;
+}
+.lista li{
+    font-size: 14px;
+}
+
+.lista li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background-color: white;
+}
