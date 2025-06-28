@@ -76,6 +76,6 @@
 >Para ello una tendremos que entrar a la raiz del proyecto e ingresar el siguiente comando
 >
 >```
->ng g component PacketTracerEjml pages/pzEjeml
+>ng g component pages/pzEjeml/PacketTracerEjml
 >```
 >
