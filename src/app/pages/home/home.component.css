@@ -1,4 +1,15 @@
-/* Carrusel */
+
+.background{
+ background-image: url(./../../../assets/Imagenes-Inicio/home/background.jpg) ; 
+ background-position: center;
+ background-size: cover;
+
+ display: grid;
+ min-height: 100dvh;
+ grid-template-rows: auto 1fr auto;
+
+}
+
 .carrusel {
   display: flex;
   position: relative;

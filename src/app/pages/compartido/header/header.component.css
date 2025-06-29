@@ -2,7 +2,7 @@ header nav div:first-child{
     background-color: #322071;
     text-align: right;
     color: white;
-    height: 40px;
+    height: 42px;
     padding: 12px;
 }
 header div nav div{
@@ -16,8 +16,22 @@ header ul li{
   padding: 0 12px;
   color: white;
 }
+header ul li a{
+    color: white;
+    text-decoration: none;
+}
 .lista li{
     font-size: 14px;
+}
+.lista-2 li{
+    display: block;
+    padding: 18px 20px 0px 20px;
+    margin: 0 6px;
+    font-size: 18px;
+
+}
+.contendeor-inif{
+    padding: 0;
 }
 
 .lista li:not(:last-child)::after {
@@ -28,4 +42,7 @@ header ul li{
   height: 50%;
   width: 1px;
   background-color: white;
+}
+.img{
+    width: 145px;
 }
