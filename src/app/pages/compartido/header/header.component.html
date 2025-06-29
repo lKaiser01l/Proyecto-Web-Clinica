@@ -1,30 +1,29 @@
-<Header>
-    <nav>
-        <div class="superior">
-            <ul class="lista">
-                <li>
-                    Programa tu cita
-                </li>
-                    
-                <li>
-                    Portal Medico
-                </li>
-                <li>
-                    Portal de Pacientes
-                </li>        
-            </ul>
-        </div>        
-    </nav>
-    <div class="inferior">
+    <Header>
         <nav>
-            <div>
-                <ul>
-                    <li>Doctores</li>
-                    <li>Especialidades</li>
-                    <li>Servicios</li>
-                    <li>Blog de Salud</li>
+            <div class="superior">
+                <ul class="lista">
+                    <li><a routerLink="/cita">Programa tu cita</a></li>                    
+                    <li><a routerLink="">Portal Medico</a></li>
+                    <li><a routerLink="/login-paciente">Portal de Pacientes</a></li>        
                 </ul>
-            </div>
+            </div>        
         </nav>
-    </div>
-</Header>
+        <div class="inferior">
+            <nav>
+                <div class="contenedor-inf">
+
+                    <a routerLink="/">
+                        <img src="assets/logo2.png" alt="logo" class="img">
+                    </a>
+
+                    <ul class="lista-2">                       
+                        <li><a routerLink=" ">Doctores</a></li>
+                        <li><a routerLink="">Especialidades</a></li>
+                        <li><a routerLink="">Servicios</a></li>
+                        <li><a routerLink="">Blog de Salud</a></li>
+                    </ul>
+                    
+                </div>
+            </nav>
+        </div>
+    </Header>

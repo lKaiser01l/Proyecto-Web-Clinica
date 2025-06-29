@@ -1,0 +1,125 @@
+.background {
+  background: linear-gradient(to bottom right, #7b6fdc, #a79be0);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.main-container {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.left-panel {
+  flex: 2;
+  background: linear-gradient(to bottom right, #f1f1ff, #e8e6f8);
+  padding: 2rem;
+  overflow-y: auto;
+  color: #333;
+}
+
+.right-panel {
+  flex: 1;
+  background-color: #ecebfb;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #4c3fa7;
+}
+
+.nm {
+  color: #6b5fcf;
+}
+
+.feature {
+  display: flex;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.feature h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #4c3fa7;
+}
+
+.feature p, .feature ul {
+  margin: 0.3rem 0 0;
+  font-size: 0.9rem;
+}
+
+.feature ul {
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-form input {
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.login-form button {
+  padding: 0.75rem;
+  background-color: #5f50c3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form .links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+a{
+  text-decoration: none;
+}
+
+.alt-options,
+.billing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.apps img {
+  height: 40px;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+
+.billing h4 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #4c3fa7;
+}
