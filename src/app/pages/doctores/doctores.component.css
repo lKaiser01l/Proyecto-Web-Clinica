@@ -1,0 +1,87 @@
+/* Contenedor general */
+.contenedor-principal {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* ---------- Buscador ---------- */
+.buscador {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.buscador input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 6px 0 0 6px;
+  font-size: 16px;
+}
+
+.buscador .btn-limpiar {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------- Abecedario ---------- */
+.abecedario {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.letra {
+  min-width: 40px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 50px;
+  border: 2px solid #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.letra:hover,
+.letra.activa {
+  background-color: #007bff;
+  color: white;
+}
+
+/* ---------- Lista de doctores ---------- */
+.lista-doctores {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.doctor {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.btn-horario {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
