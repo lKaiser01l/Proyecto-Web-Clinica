@@ -72,4 +72,10 @@
 >![LocalHost](https://github.com/lKaiser01l/Proyecto-Web-Clinica/blob/main/img/Captura%20de%20pantalla%202025-05-12%20234420.png)
 >
 >
->### 4. Aprobar
+>### 4. crear un componente
+>Para ello una tendremos que entrar a la raiz del proyecto e ingresar el siguiente comando
+>
+>```
+>ng g component pages/pzEjeml/PacketTracerEjml
+>```
+>
