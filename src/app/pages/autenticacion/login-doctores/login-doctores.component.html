@@ -1,1 +1,32 @@
-<p>login-doctores works!</p>
+<div class="min-h-screen bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center px-4">
+  <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+    <h2 class="text-3xl font-bold text-center text-blue-700 mb-6">Ingreso de Doctores</h2>
+
+    <form (ngSubmit)="iniciarSesion()" class="space-y-4">
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1" for="usuario">Usuario</label>
+        <input 
+          type="text" id="usuario" [(ngModel)]="usuario" name="usuario" required
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1" for="password">Contraseña</label>
+        <input 
+          type="password" id="password" [(ngModel)]="password" name="password" required
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+        />
+      </div>
+
+      <button 
+        type="submit"
+        class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition duration-300 font-semibold"
+      >
+        Iniciar Sesión
+      </button>
+    </form>
+
+    <p class="text-sm text-gray-500 text-center mt-4">Solo para uso de personal médico autorizado</p>
+  </div>
+</div>
