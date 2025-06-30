@@ -7,6 +7,7 @@ import { DoctoresComponent }  from './pages/doctores/doctores.component';
 import { LoginPacienteComponent } from './pages/autenticacion/login-paciente/login-paciente.component';
 import { CitaComponent } from './pages/compartido/cita/cita.component';
 import { FooterComponent } from './pages/compartido/footer/footer.component';
+import { SearchbarComponent } from './pages/searchbar/searchbar.component';
 import { BlogSaludComponent } from './pages/blog-salud/blog-salud.component'; 
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 
@@ -26,6 +27,9 @@ export const routes: Routes = [
     },{
         path: 'footer',
         component: FooterComponent
+    },{
+        path: 'searchbar',
+        component: SearchbarComponent
     },{ 
         path: 'doctores',
          component: DoctoresComponent 
