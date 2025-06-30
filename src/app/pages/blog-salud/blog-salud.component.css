@@ -1,0 +1,81 @@
+.comentarios-container {
+  max-width: 650px;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+textarea, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #c82333;
+}
+
+.contadores {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.comentario {
+  background: #f8d7da;
+  padding: 12px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border-left: 6px solid #dc3545;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.fecha {
+  font-size: 12px;
+  color: #555;
+}
+
+.texto {
+  margin: 0 0 8px 0;
+}
+
+.acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.acciones button {
+  background-color: #6c757d;
+}
+
+.acciones button:hover {
+  background-color: #5a6268;
+}
