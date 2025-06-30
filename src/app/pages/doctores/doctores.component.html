@@ -1,0 +1,43 @@
+<div class="contenedor-principal">
+
+  <!-- Buscador -->
+  <div class="buscador">
+    <input
+      type="text"
+      [(ngModel)]="terminoBusqueda"
+      placeholder="Buscar por nombre o especialidad…"
+      (input)="filtrarDoctores()" />
+
+    <button class="btn-limpiar" (click)="terminoBusqueda=''; filtrarDoctores()">
+      🔍
+    </button>
+  </div>
+
+  <!-- Barra del abecedario con "Todos" -->
+  <div class="abecedario">
+    <span
+      class="letra"
+      [class.activa]="letraSeleccionada === ''"
+      (click)="mostrarTodos()">
+      Todos
+    </span>
+
+    <span
+      class="letra"
+      *ngFor="let letra of abecedario"
+      [class.activa]="letra === letraSeleccionada"
+      (click)="filtrarPorLetra(letra)">
+      {{ letra }}
+    </span>
+  </div>
+
+  <!-- Lista de doctores filtrada -->
+  <div class="lista-doctores">
+    <div class="doctor" *ngFor="let doctor of doctoresFiltrados">
+      <h3>{{ doctor.nombre }}</h3>
+      <p><strong>Especialidad:</strong> {{ doctor.especialidad }}</p>
+      <button class="btn-horario">Horario</button>
+    </div>
+  </div>
+
+</div>

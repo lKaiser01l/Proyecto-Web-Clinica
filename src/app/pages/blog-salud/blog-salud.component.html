@@ -1,0 +1,35 @@
+<div class="comentarios-container">
+  <h2>Deja tu reclamo</h2>
+
+  <div class="formulario">
+    <textarea [(ngModel)]="nuevoTexto"
+              placeholder="Escribe tu reclamo (mín. 5 caracteres)">
+    </textarea>
+
+    <button (click)="enviarReclamo()">Enviar</button>
+  </div>
+
+  <p class="contadores">
+    Total de reclamos: {{ reclamos.length }}
+  </p>
+
+  <hr />
+
+  <h3>Reclamos recibidos</h3>
+
+  <div class="comentario"
+       *ngFor="let r of reclamos; let i = index">
+
+    <div class="encabezado">
+      <strong>RECLAMO</strong>
+      <span class="fecha">{{ r.fecha }}</span>
+    </div>
+
+    <p class="texto">{{ r.texto }}</p>
+
+    <div class="acciones">
+      <button (click)="editarReclamo(i)">✏ Editar</button>
+      <button (click)="eliminarReclamo(i)">🗑 Eliminar</button>
+    </div>
+  </div>
+</div>
