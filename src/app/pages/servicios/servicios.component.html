@@ -1,17 +1,42 @@
-<section class="galeria-servicios">
-  <div class="imagen-servicio">
-    <img src="https://especialidadesmedicas.pe/wp-content/uploads/2022/02/PORTADA-para-moviles-de-ESPECIALIDADES_REUMATOLOGIA-300x156.png" alt="Reumatología">
+<div>
+  <app-header></app-header>
+<div class="container mx-auto p-4">
+  <h2 class="text-3xl font-bold text-center mb-8">Nuestros Servicios</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div *ngFor="let servicio of servicios" class="relative rounded-xl shadow-lg overflow-hidden cursor-pointer group" (click)="abrirModal(servicio)">
+      <img 
+        [src]="servicio.imagen" 
+        [alt]="servicio.nombre" 
+        class="w-full h-80 object-cover transform group-hover:scale-105 transition duration-300"
+      />
+      <div class="absolute bottom-0 w-full bg-[#2A90E4] text-white text-center text-lg font-semibold py-2 rounded-b-xl">
+        {{ servicio.nombre }}
+      </div>
+    </div>
   </div>
-  <div class="imagen-servicio">
-    <img src="https://especialidadesmedicas.pe/wp-content/uploads/2022/02/PORTADA-para-moviles-de-ESPECIALIDADES_CARDIOLOGIA-1.png" alt="Cardiología">
+
+  <!-- MODAL -->
+  <div 
+    *ngIf="servicioSeleccionado"
+    class="fixed inset-0 bg-transparent flex items-center justify-center z-50 backdrop-blur-sm"
+  >
+    <div class="bg-white rounded-2xl p-6 w-11/12 max-w-2xl relative shadow-2xl border border-gray-200">
+      <button 
+        class="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold"
+        (click)="cerrarModal()"
+      >&times;</button>
+      <h3 class="text-2xl font-bold mb-4 text-center text-[#2A90E4]">{{ servicioSeleccionado.nombre }}</h3>
+      <img 
+        [src]="servicioSeleccionado.imagen" 
+        [alt]="servicioSeleccionado.nombre" 
+        class="w-full h-64 object-cover rounded-xl mb-4"
+      />
+      <p class="text-gray-700 text-center text-lg leading-relaxed">
+        {{ servicioSeleccionado.descripcion }}
+      </p>
+    </div>
   </div>
-  <div class="imagen-servicio">
-    <img src="https://especialidadesmedicas.pe/wp-content/uploads/2022/02/PORTADA-para-moviles-de-ESPECIALIDADES_MEDICINA-INTERNA-1.png" alt="Medicina Interna">
-  </div>
-  <div class="imagen-servicio">
-    <img src="https://especialidadesmedicas.pe/wp-content/uploads/2022/02/PORTADA-para-moviles-de-ESPECIALIDADES_PSICOLOGIA.png" alt="Psicología">
-  </div>
-  <div class="imagen-servicio">
-    <img src="https://especialidadesmedicas.pe/wp-content/uploads/2022/02/PORTADA-para-moviles-de-ESPECIALIDADES_Dermatologia-1.png" alt="Dermatología">
-  </div>
-</section>
+</div>
+<app-footer></app-footer>
+</div>

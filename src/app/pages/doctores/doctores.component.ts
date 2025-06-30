@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { HeaderComponent } from '../compartido/header/header.component';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../compartido/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-doctores',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeaderComponent, FooterComponent],
   templateUrl: './doctores.component.html',
   styleUrls: ['./doctores.component.css']
 })
