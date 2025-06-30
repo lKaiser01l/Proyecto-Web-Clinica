@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginPacienteComponent } from './pages/autenticacion/login-paciente/login-paciente.component';
 import { CitaComponent } from './pages/compartido/cita/cita.component';
 import { FooterComponent } from './pages/compartido/footer/footer.component';
+import { SearchbarComponent } from './pages/searchbar/searchbar.component';
 
 export const routes: Routes = [
     {
@@ -23,6 +24,9 @@ export const routes: Routes = [
     },{
         path: 'footer',
         component: FooterComponent
+    },{
+        path: 'searchbar',
+        component: SearchbarComponent
     }
     
 ];
