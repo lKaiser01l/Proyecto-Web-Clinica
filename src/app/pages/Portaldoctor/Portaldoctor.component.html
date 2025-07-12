@@ -1,0 +1,62 @@
+<div class="min-h-screen bg-gradient-to-tr from-indigo-100 via-purple-100 to-pink-100 p-6">
+  <!-- Perfil del Doctor -->
+  <div class="flex items-center space-x-4 mb-6">
+    <img src="assets/logo.png" alt="perfil" class="w-20 h-20 rounded-full border-2 border-purple-600" />
+    <div>
+      <h2 class="text-xl font-bold text-gray-800">Dr. Juan Pérez</h2>
+      <p class="text-sm text-gray-600">juan.perez&#64;clinicaficticia.com</p>
+    </div>
+  </div>
+
+  <!-- Botón de editar horario -->
+  <div class="text-right mb-4">
+    <button (click)="modoEdicion = !modoEdicion"
+      class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition">
+      {{ modoEdicion ? 'Bloquear Edición' : 'Editar Horario' }}
+    </button>
+  </div>
+
+  <!-- Tabla de Horario -->
+  <div class="overflow-auto">
+    <table class="min-w-full text-sm text-center border border-gray-300">
+      <thead class="bg-purple-200 text-gray-800">
+        <tr>
+          <th class="border px-2 py-1">Hora / Día</th>
+          <th *ngFor="let dia of dias" class="border px-2 py-1">
+            {{ dia }}
+            <div class="flex flex-col mt-1 space-y-1">
+              <button (click)="seleccionarTodo(dia)" [disabled]="!modoEdicion"
+                class="text-xs bg-green-500 text-white px-1 py-0.5 rounded">Seleccionar todo</button>
+              <button (click)="limpiarDia(dia)" [disabled]="!modoEdicion"
+                class="text-xs bg-red-500 text-white px-1 py-0.5 rounded">Limpiar</button>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hora of horas" class="even:bg-gray-50">
+          <td class="border px-2 py-1 font-semibold text-left pl-4">{{ hora }}</td>
+          <td *ngFor="let dia of dias" class="border px-2 py-1">
+            <input type="checkbox" [(ngModel)]="horarioSeleccionado[dia][hora]" [disabled]="!modoEdicion" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Botones generales -->
+  <div class="mt-6 text-center">
+    <button (click)="guardarHorarioGeneral()" [disabled]="!modoEdicion"
+      class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+      Guardar Horario General
+    </button>
+  </div>
+
+  <div class="mt-4 text-center">
+    <button (click)="resetHorario()" [disabled]="!modoEdicion"
+      class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-2 rounded-lg font-semibold transition">
+      Reiniciar Todo el Horario
+    </button>
+  </div>
+</div>
+

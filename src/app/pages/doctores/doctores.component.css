@@ -85,3 +85,25 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+.contenido-doctor {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.foto-doctor {
+  width: 100px;
+  height: 140px;
+  object-fit: cover;
+  border: 2px solid #5B4892;
+  border-radius: 6px;
+}
+
+.info-doctor h3 {
+  margin: 0;
+}
+
+.info-doctor p {
+  margin-top: 8px;
+}

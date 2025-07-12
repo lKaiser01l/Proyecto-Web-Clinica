@@ -1,24 +1,45 @@
 <app-header></app-header>
 
-<div class="inf-sup">
+    <div class="bg-[#5B4892] text-white py-16 px-6 md:px-20">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-center">Programe Su Cita Hoy</h2>
 
-</div>
+            <p class="text-lg mb-8 text-center">
+            Clínica Limatambo le facilita programar una cita cerca de donde vive o trabaja. Trabajamos continuamente para expandir nuestras opciones de programación para que el proceso sea lo más fluido posible para usted.
+            </p>
 
-<div class="info">
-    <div>
-        <h2>Programe Su Cita Hoy</h2>
-        <p>Clinica Limatambo le facilita programar una cita cerca de donde vive o trabaja. Trabajamos continuamente para expandir nuestras opciones de programación para que el proceso sea lo más fluido posible para usted.</p>
+            <div class="space-y-6 text-lg">
+            <div>
+                <h3 class="text-2xl font-semibold mb-1">Nuevos Pacientes</h3>
+                <p>
+                Si usted es un nuevo paciente, programe en línea. Puede hacer citas de atención primaria, atención especializada y fisioterapia en línea.
+                </p>
+            </div>
 
-        <h3>Nuevos Pacientes</h3>
-        <p>Si usted es un nuevo paciente, programe en línea. Puede hacer citas de atención primaria, atención especializada y fisioterapia en línea.</p>
+            <div>
+                <h3 class="text-2xl font-semibold mb-1">Atención Inmediata</h3>
+                <p>
+                Obtenga atención por una enfermedad o lesión menor en su centro de atención más cercana de Clínica Limatambo.
+                </p>
+            </div>
 
-        <h3>Atencion Inmediata</h3>
-        <p>Obtenga atención por una enfermedad o lesión menor en su centro de atención mas cercana de Clinica Limatambo</p><br>
-        
-        <p>Si no puede programar en línea, puede llamar para programar. Visita la seccion de medicos para encontrar un médico y su número de teléfono.</p>
+            <div>
+                <h3 class="text-2xl font-semibold mb-1">¿Prefiere llamar?</h3>
+                <p>
+                Si no puede programar en línea, puede llamar al siguiente numero "+51 123 456 789" para programar su cita. Visite la sección de Doctores para encontrar un médico de la especialidad que esta buscando y su número de teléfono.
+                </p>
+            </div>
+            </div>
 
+            <div class="mt-10 text-center">
+            <button 
+                (click)="irAPortalPacientes()"
+                class="bg-white text-[#5B4892] font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-gray-100 transition"
+            >
+                Separar Cita
+            </button>
+            </div>
+        </div>
     </div>
-
-</div>
-
+<app-footer></app-footer>
 

@@ -2,12 +2,13 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } fr
 import { HeaderComponent } from '../compartido/header/header.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../compartido/footer/footer.component';
+import { RouterLinkWithHref } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent],
+  imports: [CommonModule, HeaderComponent, FooterComponent, RouterLinkWithHref],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -74,17 +75,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     { nombre: 'Centro Quirúrgico', imagen: 'assets/Imagenes-Inicio/Servicios/centro quirurgico.png' }
   ];
 
-  autoScrollServicios() {
-    const container = document.querySelector('.servicios-carrusel') as HTMLElement;
-    if (container) {
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      if (container.scrollLeft >= maxScrollLeft - 5) {
-        container.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        container.scrollBy({ left: 300, behavior: 'smooth' });
-      }
-    }
-  }
 
   // ASEGURADORAS
   aseguradoras = [
@@ -110,9 +100,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     setInterval(() => {
       this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
     }, 4000);
-    setInterval(() => {
-      this.autoScrollServicios();
-    }, 2000);
   }
   ngAfterViewInit() {
     this.actualizarPuntosCarrusel();

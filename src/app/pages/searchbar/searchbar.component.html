@@ -1,0 +1,71 @@
+<app-header></app-header>
+<br>
+<div class="p-6 max-w-7xl mx-auto">
+  <h2 class="text-2xl font-bold mb-6">Blog</h2>
+
+  <div class="flex flex-col md:flex-row gap-4 mb-6 items-center">
+    <input [(ngModel)]="searchTerm" type="text" placeholder="Buscar datos..."
+      class="w-full md:w-1/2 p-2 border border-gray-300 rounded-md shadow-sm" />
+
+    <select [(ngModel)]="selectedCategory"
+      class="w-full md:w-1/4 p-2 border border-gray-300 rounded-md shadow-sm">
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let blogdato of filteredDatos" class="bg-white rounded-xl shadow-md p-4 flex flex-col">
+      <img [src]="blogdato.image" [alt]="blogdato.title" class="rounded-md h-48 object-cover mb-4" />
+      <h3 class="text-lg font-semibold">{{ blogdato.title }}</h3>
+      <p class="text-gray-600 text-sm">{{ blogdato.description }}</p>
+
+      <div class="mt-2 flex items-center space-x-2 text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M5.121 17.804A9 9 0 1118.88 6.196M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>{{ blogdato.author }}</span>
+      </div>
+
+      <button (click)="moreInfo(blogdato)"
+        class="mt-auto bg-[#574497] hover:bg-[#46357d] text-white py-2 px-4 rounded-md transition">
+        Más Información
+      </button>
+    </div>
+  </div>
+</div>
+<br>
+<app-footer></app-footer>
+
+<div *ngIf="selectedBlog"
+     class="fixed inset-0 z-50 flex items-center justify-center bg-white/30 backdrop-blur-md overflow-y-auto"
+     (click)="closeInfo()">
+
+  <div class="bg-white rounded-xl shadow-2xl p-6 max-w-lg w-full relative text-left max-h-[90vh] overflow-y-auto"
+       (click)="$event.stopPropagation()">
+
+    <button (click)="closeInfo()"
+      class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-lg font-bold">×</button>
+
+    <img [src]="selectedBlog.image" alt="Detalle imagen"
+      class="w-full max-h-64 object-cover rounded-md mb-4" />
+
+    <h2 class="text-2xl font-bold text-gray-800 text-center mb-2">{{ selectedBlog.title }}</h2>
+
+    <div class="flex items-center justify-start text-gray-600 mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2" viewBox="0 0 20 20"
+        fill="currentColor">
+        <path fill-rule="evenodd"
+              d="M10 11a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0H3z"
+              clip-rule="evenodd" />
+      </svg>
+      <span>{{ selectedBlog.author }}</span>
+    </div>
+
+    <p class="text-gray-700 text-justify whitespace-pre-line">
+      {{ selectedBlog.detail }}
+    </p>
+  </div>
+</div>
+

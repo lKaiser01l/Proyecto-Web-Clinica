@@ -100,7 +100,7 @@
 .card h3 {
   margin: 10px 0;
   font-size: 24px;
-  color: #007bff;
+  color: #5B4892;
 }
 
 .card p {
@@ -152,7 +152,7 @@
 .ver-todas-btn {
   position: relative;
   overflow: hidden;
-  background-color: #007bff;
+  background-color: #5B4892;
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 10px;
@@ -166,7 +166,7 @@
   display: inline-block;
 }
 .ver-todas-btn:hover {
-  background-color: #0056b3;
+  background-color: #5B4892;
   transform: translateY(-2px);
 }
 .efecto {
@@ -225,7 +225,7 @@
 .overlay {
   position: absolute;
   bottom: 0;
-  background: rgba(0, 123, 255, 0.7);
+  background: #5B4892;
   color: white;
   width: 100%;
   text-align: center;
@@ -235,7 +235,7 @@
   transition: background 0.3s ease;
 }
 .servicio-item:hover .overlay {
-  background: rgba(0, 86, 179, 0.85);
+  background: #5B4892;
 }
 
 /*Aeguradoras*/

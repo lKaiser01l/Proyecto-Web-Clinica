@@ -1,81 +1,39 @@
-<div class="background">
-  <div class="main-container">
-    <div class="left-panel">
-      <a routerLink="/">
+<div class="min-h-screen bg-gradient-to-br from-purple-200 to-purple-400 flex items-center justify-center px-4">
+  <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+    <h2 class="text-3xl font-bold text-center text-[#5B4892] mb-6">
+      {{ modoRegistro ? 'Registrarse' : 'Iniciar Sesión' }}
+    </h2>
 
-        <h1 class="logo">My<span class="nm">CL</span></h1>
-      </a>
-
-      <div class="feature">
-        <i class="icon">📩</i>
-        <div>
-          <h3>Revise sus síntomas</h3>
-          <p>La herramienta de revisión de síntomas puede ayudarle a tomar decisiones sobre su atención médica.</p>
-        </div>
+    <form (ngSubmit)="modoRegistro ? registrar() : login()" class="space-y-4">
+      <div>
+        <label for="email" class="block text-gray-700 font-semibold mb-1">Correo electrónico</label>
+        <input 
+          type="email" id="email" [(ngModel)]="email" name="email" required
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]"
+        />
       </div>
 
-      <!-- <div class="feature">
-        <i class="icon">💊</i>
-        <div>
-          <h3>Solicitar el resurtido de recetas</h3>
-          <p>Solicite un resurtido de sus medicamentos.</p>
-        </div>
-      </div> -->
-      <br>
-      <div class="feature">
-        <i class="icon">💬</i>
-        <div>
-          <h3>Comunicarse con su equipo de atención</h3>
-          <p>Obtenga respuestas a sus preguntas médicas desde la comodidad de su hogar.</p>
-          <ul>
-            <li>Espere 2 días hábiles para recibir su respuesta.</li>
-            <li><strong>No envíe</strong> un mensaje a MyNM si es urgente.</li>
-            <li><strong>Llame al 911 si tiene una emergencia.</strong></li>
-          </ul>
-        </div>
-      </div>
-      <br>
-
-      <div class="feature">
-        <i class="icon">🧪</i>
-        <div>
-          <h3>Acceda a los resultados de sus pruebas</h3>
-          <p>Recibirá una notificación en la aplicación MyNM® cuando los resultados estén listos.</p>
-        </div>
+      <div>
+        <label for="password" class="block text-gray-700 font-semibold mb-1">Contraseña</label>
+        <input 
+          type="password" id="password" [(ngModel)]="password" name="password" required
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]"
+        />
       </div>
 
-      <br><br>
+      <button 
+        type="submit"
+        class="w-full bg-[#5B4892] text-white py-2 rounded-xl hover:bg-[#47326e] transition duration-300 font-semibold"
+      >
+        {{ modoRegistro ? 'Registrarse' : 'Iniciar Sesión' }}
+      </button>
+    </form>
 
-      <div class="feature">
-        <i class="icon">📅</i>
-        <div>
-          <h3>Gestione sus citas</h3>
-          <p>Consulte los detalles de sus citas anteriores y futuras.</p>
-        </div>
-      </div>
-
-      
-    </div>
-
-    <div class="right-panel">
-      <form class="login-form">
-        <input type="text" placeholder="Nombre de usuario">
-        <input type="password" placeholder="Contraseña">
-        <button type="submit" routerLink="/">Iniciar sesión</button>
-        <div class="links">
-          <a href="#">¿Olvidó su usuario?</a>
-          <a href="#">¿Olvidó su contraseña?</a>
-        </div>
-        <div class="alt-options">
-          <button>Registrarse</button>
-        </div>
-        <div class="billing">
-          <h4>Pago de Factura de CL</h4>
-          <button>Cotizaciones Para Invitados</button>
-          <button>Pague Como Invitado</button>
-          <button>Vea Sus Estados de Cuenta</button>
-        </div>
-      </form>
-    </div>
+    <p class="text-sm text-gray-600 text-center mt-6">
+      {{ modoRegistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?' }}
+      <button (click)="cambiarModo()" class="text-[#5B4892] font-semibold underline ml-1">
+        {{ modoRegistro ? 'Inicia sesión' : 'Regístrate' }}
+      </button>
+    </p>
   </div>
 </div>
