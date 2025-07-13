@@ -20,6 +20,7 @@ export interface AuthResponse {
   token: string;
   email: string;
   nombre: string;
+  apellido: string;
   rol: string;
 }
 @Injectable({
@@ -29,7 +30,9 @@ export class AuthService {
 
   private apiUrl = 'http://localhost:8080/auth';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    
+  }
 
   // Registrar paciente
   register(data: RegistroRequest): Observable<AuthResponse> {
@@ -40,6 +43,12 @@ export class AuthService {
   login(data: LoginRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/login`, data);
   }
+  loginper(email: string, password: string): Observable<AuthResponse> {
+  return this.http.post<AuthResponse>(`${this.apiUrl}/login`, {
+    email,
+    password
+  });
+}
 
   // Guardar sesión en localStorage
   saveSession(auth: AuthResponse): void {
@@ -47,6 +56,21 @@ export class AuthService {
     localStorage.setItem('email', auth.email);
     localStorage.setItem('nombre', auth.nombre);
     localStorage.setItem('rol', auth.rol);
+  }
+
+  guardarSession(response: AuthResponse): void {
+    localStorage.setItem('token', response.token);
+    localStorage.setItem('usuario', JSON.stringify({
+      nombre: response.nombre,
+      apellido: response.apellido,
+      email: response.email,
+      rol: response.rol
+    }));
+  }
+
+  getSession(): any {
+    const session = localStorage.getItem('usuario');
+    return session ? JSON.parse(session) : null;
   }
 
   getToken(): string | null {

@@ -30,7 +30,8 @@ export const routes: Routes = [
         component: LoginDoctoresComponent
     },{
         path: 'DashBoardPaciente',
-        component: DashBoardPacienteComponent
+        loadComponent: () => import('./pages/DashBoardPaciente/DashBoardPaciente.component')
+        .then(m => m.DashBoardPacienteComponent)
     },{
         path: 'Portal-doctor',
         component: PortaldoctorComponent
@@ -56,6 +57,12 @@ export const routes: Routes = [
     },{ 
         path: 'servicios',
         component: ServiciosComponent 
+    },{
+        path: 'dashboard-admin',
+        loadComponent: () => 
+        import('./pages/Admin/dashboard-admin/dashboard-admin.component').then(
+        (m) => m.DashboardAdminComponent
+    ),
     },{
         path: '**',
         redirectTo: '' 

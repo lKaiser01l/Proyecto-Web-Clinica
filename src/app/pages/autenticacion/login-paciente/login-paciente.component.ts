@@ -1,47 +1,111 @@
-import { Component } from '@angular/core';
+
+
+import { Component, inject  } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthResponse, AuthService, LoginRequest } from '../auth.service';
 
 @Component({
   selector: 'app-login-paciente',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,ReactiveFormsModule],
   templateUrl: './login-paciente.component.html',
   styleUrl: './login-paciente.component.css'
 })
 export class LoginPacienteComponent {
-  modoRegistro: boolean = false;
-  usuariosRegistrados: { email: string; password: string }[] = [];
-  constructor(private router: Router) {}
+  
+  private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  email: string = '';
-  password: string = '';
+  modoRegistro = false;
+
+  mensajeError = '';
+  formulario: FormGroup = this.fb.group({
+    nombres: [''],
+    apellido: [''],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
+    dni: [''],
+    telefono: [''],
+  });
 
   cambiarModo() {
     this.modoRegistro = !this.modoRegistro;
-    this.email = '';
-    this.password = '';
+
+    if (this.modoRegistro) {
+      // Activar validaciones extra si se está registrando
+      this.formulario.get('nombres')?.setValidators([Validators.required]);
+      this.formulario.get('apellido')?.setValidators([Validators.required]);
+      this.formulario.get('dni')?.setValidators([Validators.required, Validators.minLength(8), Validators.maxLength(8)]);
+      this.formulario.get('telefono')?.setValidators([Validators.required, Validators.minLength(9), Validators.maxLength(9)]);
+    } else {
+      // Limpiar validaciones extra si es login
+      this.formulario.get('nombres')?.clearValidators();
+      this.formulario.get('apellido')?.clearValidators();
+      this.formulario.get('dni')?.clearValidators();
+      this.formulario.get('telefono')?.clearValidators();
+    }
+
+    this.formulario.get('nombres')?.updateValueAndValidity();
+    this.formulario.get('apellido')?.updateValueAndValidity();
+    this.formulario.get('dni')?.updateValueAndValidity();
+    this.formulario.get('telefono')?.updateValueAndValidity();
   }
 
-  registrar() {
-    const existe = this.usuariosRegistrados.find(user => user.email === this.email);
-    if (existe) {
-      alert('Este correo ya está registrado.');
-    } else {
-      this.usuariosRegistrados.push({ email: this.email, password: this.password });
-      alert('Registro exitoso. Ahora puedes iniciar sesión.');
-      this.cambiarModo();
+  login(): void {
+    if (this.formulario.invalid) {
+      this.mensajeError = 'Por favor completa todos los campos.';
+      return;
     }
+
+    const credenciales = {
+      email: this.formulario.value.email,
+      password: this.formulario.value.password,
+    };
+
+    this.authService.login(credenciales).subscribe({
+      next: (res: AuthResponse) => {
+        this.authService.saveSession(res);
+        this.redirigirPorRol(res.rol);
+      },
+      error: () => {
+        this.mensajeError = 'Credenciales incorrectas o error de conexión.';
+      },
+    });
   }
 
-  login() {
-    const usuario = this.usuariosRegistrados.find(user => user.email === this.email && user.password === this.password);
-    if (usuario) {
-      alert('Inicio de sesión exitoso');
-      this.router.navigate(['/DashBoardPaciente']);
-    } else {
-      alert('Correo o contraseña incorrectos');
+  registrar(): void {
+    if (this.formulario.invalid) {
+      this.mensajeError = 'Por favor completa todos los campos del registro.';
+      return;
     }
+
+    const nuevoUsuario = {
+      nombres: this.formulario.value.nombres,
+      apellido: this.formulario.value.apellido,
+      email: this.formulario.value.email,
+      password: this.formulario.value.password,
+      dni: this.formulario.value.dni,
+      telefono: this.formulario.value.telefono,
+    };
+
+    this.authService.register(nuevoUsuario).subscribe({
+      next: (res: AuthResponse) => {
+        this.authService.saveSession(res);
+        this.redirigirPorRol(res.rol);
+      },
+      error: () => {
+        this.mensajeError = 'No se pudo registrar. Verifica los datos.';
+      },
+    });
   }
+
+  private redirigirPorRol(rol: string): void {
+    if (rol === 'PACIENTE') this.router.navigate(['/DashBoardPaciente']);
+    else if (rol === 'DOCTOR') this.router.navigate(['/doctor']);
+    else if (rol === 'ADMIN') this.router.navigate(['/admin']);
+  }
+
 }

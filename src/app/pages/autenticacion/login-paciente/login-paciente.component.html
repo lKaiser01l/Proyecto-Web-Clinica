@@ -4,30 +4,68 @@
       {{ modoRegistro ? 'Registrarse' : 'Iniciar Sesión' }}
     </h2>
 
-    <form (ngSubmit)="modoRegistro ? registrar() : login()" class="space-y-4">
-      <div>
-        <label for="email" class="block text-gray-700 font-semibold mb-1">Correo electrónico</label>
+    <form [formGroup]="formulario" (ngSubmit)="modoRegistro ? registrar() : login()" class="space-y-4">
+
+      <div *ngIf="modoRegistro">
+        <label class="block text-gray-700 font-semibold mb-1">Nombres</label>
         <input 
-          type="email" id="email" [(ngModel)]="email" name="email" required
-          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]"
+          type="text" formControlName="nombres" 
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]" 
+        />
+      </div>
+
+      <div *ngIf="modoRegistro">
+        <label class="block text-gray-700 font-semibold mb-1">Apellido</label>
+        <input 
+          type="text" formControlName="apellido" 
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]" 
         />
       </div>
 
       <div>
-        <label for="password" class="block text-gray-700 font-semibold mb-1">Contraseña</label>
+        <label class="block text-gray-700 font-semibold mb-1">Correo electrónico</label>
         <input 
-          type="password" id="password" [(ngModel)]="password" name="password" required
-          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]"
+          type="email" formControlName="email"
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]" 
+        />
+      </div>
+
+      <div>
+        <label class="block text-gray-700 font-semibold mb-1">Contraseña</label>
+        <input 
+          type="password" formControlName="password"
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]" 
+        />
+      </div>
+
+      <div *ngIf="modoRegistro">
+        <label class="block text-gray-700 font-semibold mb-1">DNI</label>
+        <input 
+          type="text" formControlName="dni" maxlength="8"
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]" 
+        />
+      </div>
+
+      <div *ngIf="modoRegistro">
+        <label class="block text-gray-700 font-semibold mb-1">Teléfono</label>
+        <input 
+          type="text" formControlName="telefono" maxlength="9"
+          class="w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-[#5B4892]" 
         />
       </div>
 
       <button 
         type="submit"
         class="w-full bg-[#5B4892] text-white py-2 rounded-xl hover:bg-[#47326e] transition duration-300 font-semibold"
+        [disabled]="formulario.invalid"
       >
         {{ modoRegistro ? 'Registrarse' : 'Iniciar Sesión' }}
       </button>
     </form>
+
+    <div *ngIf="mensajeError" class="text-red-600 text-center mt-3">
+      {{ mensajeError }}
+    </div>
 
     <p class="text-sm text-gray-600 text-center mt-6">
       {{ modoRegistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?' }}
