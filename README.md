@@ -4,7 +4,7 @@
 >### Dependencias del Front-end
 >Este proyecto hace uso del framework Angular
 >
->[![Angular Build Logo](https://upload.wikimedia.org/wikipedia/commons/0/07/Angular_Logo_SVG.svg)](https://angular.dev/)
+>[![Angular Build Logo]([https://upload.wikimedia.org/wikipedia/commons/0/07/Angular_Logo_SVG.svg](https://angular.dev/assets/images/press-kit/angular_wordmark_gradient.png))](https://angular.dev/)
 >
 >A su vez para el diseño de la pagina usaremos el framework Tailwindcss
 >
